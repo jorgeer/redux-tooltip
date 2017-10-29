@@ -65,8 +65,8 @@ class Tooltip extends Component {
   updatePosition(props) {
     // Render content into hidden DOM element to determine size
     const content = this.children(props);
-    ReactDOM.render(<div>{content}</div>, this.refs.shadow, () => {
-      const state = adjust(this.refs.shadow, props);
+    ReactDOM.render(<div>{content}</div>, this.shadow, () => {
+      const state = adjust(this.shadow, props);
       this.setState(state);
     });
   }
@@ -96,7 +96,6 @@ class Tooltip extends Component {
     return (
       <div>
         <div
-          ref="tooltip"
           style={style.base}
           id={id}
           className={className}
@@ -104,7 +103,6 @@ class Tooltip extends Component {
           onMouseLeave={onLeave}
         >
           <div
-            ref="content"
             style={style.content}
             id={`${id}-content`}
             className={`${className}-content`}
@@ -117,11 +115,11 @@ class Tooltip extends Component {
             className={`${className}-arrow`}
             key={`a-${place}`}
           >
-            <span ref="border" style={style.border} key={`b-${place}`}></span>
+            <span style={style.border} key={`b-${place}`}></span>
           </div>
         </div>
         <div
-          ref="shadow"
+          ref={(el) => { this.shadow = el; }}
           style={style.shadow}
           id={`${id}-shadow`}
           className={`${className}-shadow`}

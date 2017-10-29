@@ -18,7 +18,7 @@
     "test:feature": "./node_modules/.bin/karma start",
     "test:feature:ci": "./node_modules/.bin/karma start karma.conf.js --single-run",
     "clean": "./node_modules/.bin/rimraf lib",
-    "prepublish": "npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build"
   },
   "authors": [
     "Yuki Kodama <endflow.net@gmail.com>"
@@ -34,11 +34,10 @@
   "dependencies": {
     "blacklist": "^1.1.4",
     "dompurify": "^1.0.2",
-    "is-dom": "^1.0.9",
-    "prop-types": "^15.6.0"
+    "is-dom": "^1.0.9"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.20.0",
@@ -60,6 +59,7 @@
     "mocha": "^4.0.1",
     "phantomjs-prebuilt": "^2.1.14",
     "power-assert": "^1.4.2",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.1",
